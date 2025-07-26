@@ -1749,18 +1749,13 @@
                             a[k] = values[k];
                     }
                     if (this.collectTrackingParameters) {
-                        usp = new URLSearchParams(window.location.search);
-                        b = ['utm_source', 'utm_medium', 'utm_campaign'];
-                        for (k of b) {
-                            x = usp.get(k);
-                            if (x) {
-                                x = x.trim();
-                                x = x.replace(/[^a-zA-Z0-9\-\_\%\+\s]/g, '');
-                                x = x.replace(/\s+/g, '_');
-                                if (x.length <= 256)
-                                    a[k] = x;
+                    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
+                        utmKeys.forEach(key => {
+                            const value = localStorage.getItem(key); // Retrieve from localStorage
+                            if (value) {
+                                a[key] = value.trim();
                             }
-                        }
+                        });
                     }
                     switch (this.method) {
                     default:
