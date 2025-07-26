@@ -40,6 +40,27 @@
                 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             })(window, document, "clarity", "script", "skb8ksy2cx");
         </script>
+        <script type="text/javascript">
+        // Capture UTM parameters, store them, and clean the URL
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
+
+            // Store UTM parameters in localStorage
+            utmKeys.forEach(key => {
+                const value = params.get(key);
+                if (value) {
+                    localStorage.setItem(key, value); // You can use sessionStorage or cookies instead
+                }
+            });
+
+            // Clean the URL by removing UTM parameters
+            if (params.toString()) {
+                const cleanUrl = window.location.origin + window.location.pathname;
+                window.history.replaceState({}, document.title, cleanUrl);
+            }
+        })();
+        </script>
     </head>
     <body class="is-loading">
         <!-- Google Tag Manager (noscript) -->
