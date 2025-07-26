@@ -40,25 +40,41 @@
                 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             })(window, document, "clarity", "script", "skb8ksy2cx");
         </script>
-        <script type="text/javascript">
-        // Capture UTM parameters, store them, and clean the URL
+               <script type="text/javascript">
         (function() {
             const params = new URLSearchParams(window.location.search);
             const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
 
-            // Store UTM parameters in localStorage
+            // Check if UTM parameters are already present
+            let hasUTM = false;
             utmKeys.forEach(key => {
-                const value = params.get(key);
-                if (value) {
-                    localStorage.setItem(key, value); // You can use sessionStorage or cookies instead
+                if (params.has(key)) {
+                    hasUTM = true;
                 }
             });
 
-            // Clean the URL by removing UTM parameters
-            if (params.toString()) {
-                const cleanUrl = window.location.origin + window.location.pathname;
-                window.history.replaceState({}, document.title, cleanUrl);
+            // If no UTM parameters are present, append default ones
+            if (!hasUTM) {
+                params.set('utm_source', 'google'); // Default UTM source
+                params.set('utm_medium', 'cpc');   // Default UTM medium
+                params.set('utm_campaign', 'waitlist'); // Default UTM campaign
+
+                // Update the URL in the background without reloading the page
+                const newUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+                window.history.replaceState({}, document.title, newUrl);
             }
+
+            // Store UTM parameters in localStorage for later use
+            utmKeys.forEach(key => {
+                const value = params.get(key);
+                if (value) {
+                    localStorage.setItem(key, value);
+                }
+            });
+
+            // Clean the URL (optional, if you don't want users to see UTM params)
+            const cleanUrl = window.location.origin + window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
         })();
         </script>
     </head>
