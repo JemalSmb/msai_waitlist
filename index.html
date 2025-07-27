@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
-        <title>MetaSurf AI — Waitlist</title>
+        <title>MetaSurf AI — Get Paid Crypto to Watch Videos You Actually Enjoy</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
         <meta name="color-scheme" content="light only"/>
@@ -34,17 +34,10 @@
         })(window,document,'script','dataLayer','GTM-P6JHNMRF');</script>
         <!-- End Google Tag Manager -->
         <script type="text/javascript">
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "skb8ksy2cx");
-        </script>
-        <script type="text/javascript">
             (function() {
                 const params = new URLSearchParams(window.location.search);
                 const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
-        
+
                 // Check if UTM parameters are already present
                 let hasUTM = false;
                 utmKeys.forEach(key => {
@@ -52,11 +45,11 @@
                         hasUTM = true;
                     }
                 });
-        
+
                 // If no UTM parameters are present, dynamically set them based on referrer
                 if (!hasUTM) {
                     const referrer = document.referrer.toLowerCase();
-        
+
                     if (referrer.includes('linkedin.com')) {
                         params.set('utm_source', 'linkedin');
                         params.set('utm_medium', 'social');
@@ -75,12 +68,12 @@
                         params.set('utm_medium', 'none');
                         params.set('utm_campaign', 'waitlist');
                     }
-        
+
                     // Update the URL in the background without reloading the page
                     const newUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
                     window.history.replaceState({}, document.title, newUrl);
                 }
-        
+
                 // Store UTM parameters in localStorage for later use
                 utmKeys.forEach(key => {
                     const value = params.get(key);
@@ -88,11 +81,18 @@
                         localStorage.setItem(key, value);
                     }
                 });
-        
+
                 // Clean the URL (optional, if you don't want users to see UTM params)
                 const cleanUrl = window.location.origin + window.location.pathname;
                 window.history.replaceState({}, document.title, cleanUrl);
             })();
+        </script>
+        <script type="text/javascript">
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "skb8ksy2cx");
         </script>
     </head>
     <body class="is-loading">
@@ -186,7 +186,7 @@
                                     <form enctype="multipart/form-data" id="form01" method="post">
                                         <div class="inner">
                                             <div class="field" data-type="email">
-                                                <input type="email" name="untitled" id="form01-untitled" placeholder="Enter Your Email" maxlength="128" required/>
+                                                <input type="email" name="enter-your-email" id="form01-enter-your-email" placeholder="Enter Your Email" maxlength="128" required/>
                                             </div>
                                             <div class="field">
                                                 <input type="text" name="company" id="form01-company" placeholder="Company" maxlength="128"/>
@@ -237,7 +237,7 @@
                                     <form enctype="multipart/form-data" id="form05" method="post">
                                         <div class="inner">
                                             <div class="field" data-type="email">
-                                                <input type="email" name="untitled" id="form05-untitled" placeholder="Enter Your Email" maxlength="128" required/>
+                                                <input type="email" name="enter-your-email" id="form05-enter-your-email" placeholder="Enter Your Email" maxlength="128" required/>
                                             </div>
                                             <div class="field">
                                                 <input type="text" name="domain" id="form05-domain" placeholder="Domain" maxlength="128"/>
